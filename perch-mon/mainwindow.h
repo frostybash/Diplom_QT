@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QtNetwork>
+#include <QLCDNumber>
 
 namespace Ui {
 class MainWindow;
