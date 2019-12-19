@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QtNetwork>
 #include <QLCDNumber>
+#include <QGraphicsView>
+#include <QLineSeries>
 
 namespace Ui {
 class MainWindow;
@@ -19,10 +21,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QUdpSocket socket;
+    QUdpSocket *socket;
 private slots:
     void Read_perch();
+    void Build_chart();
 };
+
 
 #endif // MAINWINDOW_H
 
