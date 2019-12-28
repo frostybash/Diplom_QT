@@ -17,6 +17,7 @@ SOURCES += main.cpp\
     chartclass.cpp
 
 HEADERS  += mainwindow.h \
-    chartclass.h
+    chartclass.h \
+    perch.h
 
 FORMS    += mainwindow.ui

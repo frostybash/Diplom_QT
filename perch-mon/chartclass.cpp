@@ -2,7 +2,7 @@
 #include <QLineSeries>
 #include <QChart>
 #include "mainwindow.h"
-using namespace QtCharts;
+/*using namespace QtCharts;
 chartclass::chartclass(QWidget *parent):
     QChartView(parent)
 {
@@ -23,7 +23,7 @@ chartclass::chartclass(QWidget *parent):
     /*QMainWindow window;
     window.setCentralWidget(chartView);
     window.resize(0,10);
-    window.show();*/
+    window.show();
     for(int i=0; i<10;i++)
     series->append(i,i*i);
 
@@ -45,5 +45,5 @@ chartclass::chartclass(QWidget *parent):
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
    // setCentralWidget(chartView);
-}
+}*/
 

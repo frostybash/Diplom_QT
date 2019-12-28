@@ -34,23 +34,13 @@
      </rect>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>20</y>
-      <width>381</width>
-      <height>181</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="chartclass" name="chart" native="true">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>200</y>
-      <width>120</width>
-      <height>80</height>
+      <x>260</x>
+      <y>60</y>
+      <width>441</width>
+      <height>351</height>
      </rect>
     </property>
    </widget>

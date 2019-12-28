@@ -24,7 +24,7 @@ private:
     QUdpSocket *socket;
 private slots:
     void Read_perch();
-    void Build_chart();
+    //void Build_amps();
 };
 
 
