@@ -7,6 +7,7 @@
 #include <QtCharts>
 QT_CHARTS_USE_NAMESPACE
 
+
 class chartclass : public QChartView
 {
 public:
@@ -15,5 +16,7 @@ public:
     QChart *chart;
     QChartView *chartView;
 };
+
+
 
 #endif // CHARTCLASS_H

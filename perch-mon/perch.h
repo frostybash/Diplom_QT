@@ -16,7 +16,7 @@ struct perchData
     quint16 ref;      // number of spectrm
 };
 
-    struct perch_packet
+struct perch_packet
 {
         perchHeader *headerr;
         perchData *perchAmp;
