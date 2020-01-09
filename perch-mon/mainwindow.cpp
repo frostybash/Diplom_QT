@@ -15,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     socket->bind(QHostAddress::Any, 1025);
     connect(socket, SIGNAL(readyRead()),this,SLOT(Read_perch()));
+
+    ui->graphicsView->setChart(&myChart);
+    ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+    ui->graphicsView->setRubberBand(QChartView::RectangleRubberBand);
 }
 
 MainWindow::~MainWindow()
@@ -25,9 +29,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::Read_perch()
 {
-    QLineSeries *series = new QLineSeries();
-    QChart *chart = new QChart();
-    QChartView *chartView = new QChartView(chart);
+    //QLineSeries *series = new QLineSeries();
+    //QChart *chart = new QChart();
+    //QChartView *chartView = new QChartView(chart);
     QByteArray head;
     perch_packet packet;
 
@@ -38,24 +42,29 @@ void MainWindow::Read_perch()
     packet.headerr = (perchHeader*)head.constData();
     packet.perchAmp = (perchData*)(head.constData() + sizeof(perchHeader));
     packet.amps = (quint16*)(head.constData() + sizeof(perchHeader) + sizeof(perchData));
+
+    myChart.set(packet.amps, packet.perchAmp->len);
+
     for(int i = 0; i < packet.perchAmp->len; i++)
     {
 
-              series->append(packet.perchAmp->len, 1024);
-              series->append(packet.headerr->ptype,100);
+            // qDebug() << packet.amps;
+              /*series->append(packet.perchAmp->len, 1024);
+              series->append(packet.headerr->ptype,100);*/
 
     }
     // series->append(packet.headerr->dlen, 2);
 
      ui->lcdNumber->display(packet.headerr->pcntr);
 
-     ui->widget->chart->legend()->setVisible(true);
-     ui->widget->chart->addSeries(series);
+     //ui->widget->chart->legend()->setVisible(true);
+     //ui->widget->chart->addSeries(series);
     // ui->widget->chart->createDefaultAxes();
-     ui->widget->chart->legend()->setAlignment((Qt::AlignBottom));
+     //ui->widget->chart->legend()->setAlignment((Qt::AlignBottom));
 
-     ui->widget->chartView->setRenderHint(QPainter::Antialiasing);
+     //ui->widget->chartView->setRenderHint(QPainter::Antialiasing);
     // ui->widget->chartView->setChart();
+
 
 }
 
@@ -64,3 +73,8 @@ void MainWindow::Read_perch()
 
 
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    myChart.zoomReset();
+}

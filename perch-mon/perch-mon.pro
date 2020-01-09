@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    chartclass.cpp
+    chartclass.cpp \
+    mychart.cpp
 
 HEADERS  += mainwindow.h \
     chartclass.h \
-    perch.h
+    perch.h \
+    mychart.h
 
 FORMS    += mainwindow.ui

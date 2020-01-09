@@ -54,11 +54,34 @@ p, li { white-space: pre-wrap; }
    <widget class="chartclass" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>60</y>
-      <width>551</width>
-      <height>471</height>
+      <x>10</x>
+      <y>400</y>
+      <width>231</width>
+      <height>191</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QChartView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>40</y>
+      <width>731</width>
+      <height>521</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>570</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset Zoom</string>
     </property>
    </widget>
   </widget>
@@ -89,6 +112,11 @@ p, li { white-space: pre-wrap; }
    <extends>QWidget</extends>
    <header location="global">chartclass.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>QChartView</header>
   </customwidget>
  </customwidgets>
  <resources/>

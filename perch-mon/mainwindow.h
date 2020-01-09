@@ -6,6 +6,7 @@
 #include <QLCDNumber>
 #include <QGraphicsView>
 #include <QLineSeries>
+#include "mychart.h"
 
 namespace Ui {
 class MainWindow;
@@ -22,9 +23,11 @@ public:
 private:
     Ui::MainWindow *ui;
     QUdpSocket *socket;
+    MyChart myChart;
 private slots:
     void Read_perch();
     //void Build_amps();
+    void on_pushButton_clicked();
 };
 
 
